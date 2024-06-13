@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<body>
+    <div class="container">
+        <div class="books">
+            
+            {% for book in books  %}
+                <div class="book">
+                    <div class="image"><img src="../Media/{{book.image}}" alt=""></div>
+                    <div class="data">
+                        <h3>{{book.title}}</h3>
+                        <h3>{{book.name}}</h3>
+                        <h3>{{book.year}}</h3>
+                    </div>
+                </div>
+            {% endfor %}              
+        </div>
+        <button class="btn btn-primary"><a clas="list" href="{% url 'addbook' %}">Kitab elave</a></button>
+        <button class="btn btn-primary"><a clas="list" href="{% url 'withapi' %}">API</a></button>
+    </div>
+</body>
+</html>
